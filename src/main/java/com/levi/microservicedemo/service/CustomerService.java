@@ -10,6 +10,7 @@ import org.springframework.util.CollectionUtils;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Slf4j
@@ -19,6 +20,20 @@ public class CustomerService {
     CustomerRepository customerRepository;
 
 
+    public Customer getCustomerById(String id) {
+        log.info("Getting customer {} from the repository.", id);
+
+        Optional<Customer> optionalCustomer = customerRepository.findById(id);
+
+        if (optionalCustomer == null || optionalCustomer.get() == null) {
+            log.info("No customer found by id {}", id);
+            return null;
+        }
+
+        Customer customer = optionalCustomer.get();
+        log.info("found {} customers by id {}", customer.getName(), id);
+        return customer;
+    }
 
     public List<Customer> getCustomerByName(String name) {
         log.info("Getting customer {} from the repository.", name);

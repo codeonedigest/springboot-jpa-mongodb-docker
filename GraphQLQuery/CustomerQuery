@@ -1,0 +1,8 @@
+query customerDetails {
+  customerById(id: "6409696e549eeda396e4a911") {
+    id
+    name
+    role
+    age
+   }
+}
