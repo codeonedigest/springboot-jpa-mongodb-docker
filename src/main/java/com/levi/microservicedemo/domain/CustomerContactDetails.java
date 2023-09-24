@@ -19,4 +19,8 @@ public class CustomerContactDetails {
         this.email = email;
         this.mobile = mobile;
     }
+
+    public CustomerContactDetails() {
+
+    }
 }

@@ -7,4 +7,16 @@ type Customer {
     name: String
     role: String
     age: Int
+    customerContactDetails: CustomerContactDetails
+}
+
+type CustomerContactDetails {
+    id: ID
+    email: String
+    mobile: String
+    address: String
+}
+
+type Mutation {
+    addCustomer(name: String, age: Int, role: String, email: String, mobile: String, address: String): Customer
 }

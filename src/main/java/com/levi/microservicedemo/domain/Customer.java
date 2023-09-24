@@ -17,4 +17,6 @@ public class Customer {
 
     private int age;
 
+    private String contactId;
+
 }
